@@ -166,3 +166,14 @@ cd apache-maven-3.8.2
 pwd
 ```
 
+### Cloning TekTutor Jenkins repository (Do it as rps user)
+```
+cd ~
+git clone https://github.com/tektutor/jenkins-aug-2021.git
+```
+
+### Building Hello java application and run the automated test cases
+```
+cd jenkins-aug-2021/Day1/Hello
+mvn clean test
+```
