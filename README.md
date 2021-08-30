@@ -121,7 +121,7 @@ docker stop ubuntu1
 docker rm ubuntu1
 ```
 
-### Removing containers focibly
+### Removing containers forcibly
 ```
 docker rm -f ubuntu2
 ```
