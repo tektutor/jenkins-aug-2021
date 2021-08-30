@@ -55,7 +55,13 @@ docker ps
 docker run -it --name ubuntu1 --hostname ubuntu1 ubuntu:16.04 /bin/bash
 ```
 
-### Listing the running containers 
+### Installing ifconfig utility inside container
+```
+root@ubuntu1:/# apt update && apt install -y net-tools
+root@ubuntu1:/# ifconfig
+```
+
+### Listing the running containers from another terminal(tab)
 ```
 docker ps
 ```
