@@ -177,3 +177,23 @@ git clone https://github.com/tektutor/jenkins-aug-2021.git
 cd jenkins-aug-2021/Day1/Hello
 mvn clean test
 ```
+
+### Set up JFrog artifactory using Docker
+```
+docker run -d --name artifactory --hostname artifactory -p 8081:8081 jfrog-docker-reg2.bintray.io/jfrog/artifactory-oss:4.1.0
+```
+
+#### See if the artifactory container runs properly
+```
+docker ps
+```
+If you are able to see the artifactory container running, you may access the artifactory web page at
+https://localhost:8081
+
+
+
+
+
+
+
+
