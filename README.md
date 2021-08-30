@@ -188,7 +188,7 @@ docker run -d --name artifactory --hostname artifactory -p 8081:8081 jfrog-docke
 docker ps
 ```
 If you are able to see the artifactory container running, you may access the artifactory web page at
-https://localhost:8081
+http://localhost:8081
 
 
 
