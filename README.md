@@ -136,3 +136,8 @@ docker rm $(docker ps -aq)
 ```
 docker rm -f $(docker ps -aq)
 ```
+
+### Restarting a container
+```
+docker restart ubuntu1
+```
