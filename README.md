@@ -185,7 +185,7 @@ docker run -d --name artifactory --hostname artifactory -p 8081:8081 jfrog-docke
 
 #### See if the artifactory container runs properly
 ```
-docker ps
+docker psThis time c1 will be able to ping c2
 ```
 If you are able to see the artifactory container running, you may access the artifactory web page at
 http://localhost:8081
@@ -216,6 +216,30 @@ docker run -dit --name c1 --hostname c1 --network my-network-1 ubuntu:16.04 bash
 ```
 docker run -dit --name c2 --hostname c2 --network my-network-2 ubuntu:16.04 bash
 ```
+
+### Asci diagram of c1 and c2 
+<pre>
++-----------------------------------------+               +-----------------------------------------+
+|                                         |               |                                         |
+|                                         |               |                                         |
+|                                         |               |                                         |
+|                                         |               |                                         |
+|                                         |               |                                         |
+|           +-----------------+           |               |          +-----------------+            |
+|           |                 |           |               |          |                 |            |
+|           |                 |           |               |          |   Container     |            |
+|           |     Container   |           |               |          |      C2         |            |
+|           |        C1       |           |               |          |   172.19.0.2    |            |
+|           |     172.18.0.2  |           |               |          |                 |            |
+|           +-----------------+           |               |          +-----------------+            |
+|                                         |               |                                         |
+|             172.18.0.0/16               |               |             172.18.0.0/16               |
+|             my-network-1                |               |             my-network-2                |
+|                                         |               |                                         |
+|                                         |               |                                         |
+|                                         |               |                                         |
++-----------------------------------------+               +-----------------------------------------+
+</pre>
 
 ### Get inside c1 shell
 ```
@@ -261,7 +285,21 @@ Now c1 container will have two IPs as it is connected to two different networks.
 ### Get inside c1 and verify if c1 can ping c2
 ```
 docker exec -it c1 bash
-ping 172.19.0.2
+ping 172.19.0.2+_________________+                         +_________________+ 
+223
+|    $$$$$$$$$    |                         |    ---------    |
+224
+|    $  C1   $    |                         |    |  C2   |    |
+225
+|    $       $    |                         |    |       |    |
+226
+|    $$$$$$$$$    |
+227
+|   my-network-1  |
+228
+|   172.18.0.0/16 |
+229
++_________________+
 ```
 This time c1 will be able to ping c2
 
