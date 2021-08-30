@@ -141,3 +141,28 @@ docker rm -f $(docker ps -aq)
 ```
 docker restart ubuntu1
 ```
+### Installing JDK 11
+```
+sudo yum install -y java-11-openjdk-devel
+```
+
+#### Verify if JDK is installed properly
+```
+java -version
+javac -version
+```
+
+### Installing Maven
+```
+cd ~/Downloads
+wget https://mirrors.estointernet.in/apache/maven/maven-3/3.8.2/binaries/apache-maven-3.8.2-bin.tar.gz
+tar xvfz apache-maven-3.8.2-bin.tar.gz
+```
+
+#### Adding Maven into environment settings
+```
+cd ~/Downloads
+cd apache-maven-3.8.2
+pwd
+```
+
