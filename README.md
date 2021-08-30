@@ -196,7 +196,78 @@ User - admin
 Password - password
 ```
 
+### Creating custom network in docker
+```
+docker network create my-network-1
+docker network create my-network-2
+```
 
+### Listing docker networks
+```
+docker network ls
+```
 
+### Creating a container c1 and adding the container to our custom network
+```
+docker run -dit --name c1 --hostname c1 --network my-network-1 ubuntu:16.04 bash
+```
 
+### Creating a container c2 and adding the container to our custom network
+```
+docker run -dit --name c2 --hostname c2 --network my-network-2 ubuntu:16.04 bash
+```
 
+### Get inside c1 shell
+```
+docker exec -it c1 bash
+apt update && apt install -y net-tools iputils-ping
+```
+
+### Find the ip address of c1 from within c1 shell
+```
+hostname -i
+```
+
+### Get inside c2 shell in another terminal
+```
+docker exec -it c2 bash
+apt update && apt install -y net-tools iputils-ping
+```
+
+### Find the IP address of c2 from within c2
+```
+hostname -i
+```
+
+### Ping c1 from c2
+```
+ping 172.18.0.2
+```
+As you can notice, c1 won't be able to ping c2 as they are in two different networks.
+
+### Ping c2 from c1
+```
+ping 172.19.0.2
+```
+As you can notice, c2 won't be able to ping c1 as they are in two different networks.
+
+### Now let's connect c1 to my-network-2
+```
+docker network connect my-network-2 c1
+docker inspect c1 | grep IPA
+```
+Now c1 container will have two IPs as it is connected to two different networks.
+
+### Get inside c1 and verify if c1 can ping c2
+```
+docker exec -it c1 bash
+ping 172.19.0.2
+```
+This time c1 will be able to ping c2
+
+### Get inside c2 and verify if c2 can ping c1
+```
+docker exec -it c2 bash
+ping 172.19.0.3
+```
+This time c2 will be able to ping c1
