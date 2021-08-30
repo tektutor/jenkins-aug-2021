@@ -233,7 +233,7 @@ docker run -dit --name c2 --hostname c2 --network my-network-2 ubuntu:16.04 bash
 |           |     172.18.0.2  |           |               |          |                 |            |
 |           +-----------------+           |               |          +-----------------+            |
 |                                         |               |                                         |
-|             172.18.0.0/16               |               |             172.18.0.0/16               |
+|             172.18.0.0/16               |               |             172.19.0.0/16               |
 |             my-network-1                |               |             my-network-2                |
 |                                         |               |                                         |
 |                                         |               |                                         |
@@ -285,21 +285,7 @@ Now c1 container will have two IPs as it is connected to two different networks.
 ### Get inside c1 and verify if c1 can ping c2
 ```
 docker exec -it c1 bash
-ping 172.19.0.2+_________________+                         +_________________+ 
-223
-|    $$$$$$$$$    |                         |    ---------    |
-224
-|    $  C1   $    |                         |    |  C2   |    |
-225
-|    $       $    |                         |    |       |    |
-226
-|    $$$$$$$$$    |
-227
-|   my-network-1  |
-228
-|   172.18.0.0/16 |
-229
-+_________________+
+ping 172.19.0.2
 ```
 This time c1 will be able to ping c2
 
