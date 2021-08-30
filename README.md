@@ -1,4 +1,4 @@
-### Installing Docker
+### Installing Docker in CentOS
 ```
 sudo yum install -y yum-utils
 sudo yum-config-manager \
@@ -7,6 +7,7 @@ sudo yum-config-manager \
 sudo yum install docker-ce --allowerasing
 sudo systemctl enable docker && systemctl start docker
 ```
+For other OS, you may refer the official documentation here https://docs.docker.com/engine/install/
 
 #### Verify if docker command works
 ```
