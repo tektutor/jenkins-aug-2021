@@ -86,3 +86,42 @@ root@ubuntu1:/#
 ```
 docker ps
 ```
+
+### Exiting the container from within interactive container shell
+```
+root@ubuntu1:/# exit
+```
+
+### At this point ubuntu1 container has exited
+```
+docker ps
+```
+
+### Starting the stopped container
+```
+docker start ubuntu1`
+```
+
+### Opening a second shell inside the already running container 
+```
+docker exec -it ubuntu1 /bin/bash
+root@ubuntu1:/# exit
+```
+Exiting the second shell we launched using the above exec command will not exit the container.
+
+### Stopping a container
+```
+docker stop ubuntu1
+docker stop ubuntu2 ubuntu3
+```
+
+### Remove running containers graciously
+```
+docker stop ubuntu1 
+docker rm ubuntu1
+```
+
+### Removing containers focibly
+```
+docker rm -f ubuntu2
+```
