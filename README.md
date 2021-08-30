@@ -190,7 +190,9 @@ docker ps
 If you are able to see the artifactory container running, you may access the artifactory web page at
 http://localhost:8081
 
-
+Login Credentials
+User - admin
+Password - password
 
 
 
