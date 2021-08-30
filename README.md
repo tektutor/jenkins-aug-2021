@@ -13,6 +13,11 @@ sudo systemctl enable docker && systemctl start docker
 sudo systemctl status docker 
 ```
 
+### Finding details about your docker installation
+```
+docker info
+```
+
 ### Listing docker images in the local docker registry
 ```
 docker images
