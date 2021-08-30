@@ -60,6 +60,27 @@ docker run -it --name ubuntu1 --hostname ubuntu1 ubuntu:16.04 /bin/bash
 root@ubuntu1:/# apt update && apt install -y net-tools
 root@ubuntu1:/# ifconfig
 ```
+The expected output is
+<pre>
+root@ubuntu1:/# ifconfig
+eth0      Link encap:Ethernet  HWaddr 02:42:ac:11:00:02  
+          inet addr:172.17.0.2  Bcast:172.17.255.255  Mask:255.255.0.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2877 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2336 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:19712773 (19.7 MB)  TX bytes:130632 (130.6 KB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+root@ubuntu1:/# 
+</pre>
 
 ### Listing the running containers from another terminal(tab)
 ```
