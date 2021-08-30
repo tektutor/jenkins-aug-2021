@@ -49,3 +49,13 @@ docker ps -a
 ```
 docker ps
 ```
+
+### Creating a ubuntu container interactively
+```
+docker run -it --name ubuntu1 --hostname ubuntu1 ubuntu:16.04 /bin/bash
+```
+
+### Listing the running containers 
+```
+docker ps
+```
