@@ -125,3 +125,14 @@ docker rm ubuntu1
 ```
 docker rm -f ubuntu2
 ```
+
+### Stopping and Removing multiple containers
+```
+docker stop $(docker ps -q)
+docker rm $(docker ps -aq)
+```
+
+### Removing multiple containers abruptly
+```
+docker rm -f $(docker ps -aq)
+```
