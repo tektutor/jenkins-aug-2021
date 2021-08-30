@@ -217,7 +217,7 @@ docker run -dit --name c1 --hostname c1 --network my-network-1 ubuntu:16.04 bash
 docker run -dit --name c2 --hostname c2 --network my-network-2 ubuntu:16.04 bash
 ```
 
-### Asci diagram of c1 and c2 
+### Ascii diagram of c1 and c2 connected to two different custom networks
 <pre>
 +-----------------------------------------+               +-----------------------------------------+
 |                                         |               |                                         |
