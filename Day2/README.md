@@ -25,3 +25,31 @@ sudo git config --system --user.name "Jeganathan Swaminathan"
 sudo git config --system --user.email "mail2jegan@gmail.com"
 ```
 The config file will be saved in the /etc directory, hence config details are available for all the Git repos created by all users in the system.
+
+### Staging a new file
+```
+cd /home/rps
+mkdir GitDemo
+cd GitDemo
+echo "Apple" > fruits.txt
+
+git add fruits.txt
+```
+
+### Commiting the staged files 
+```
+git commit -m "Initial commit."
+```
+
+### Modifying the files in the Git repo
+```
+echo "\nGrapes" >> fruits.txt
+git add --all
+git commit -m "Added Grapes."
+```
+
+### Ammending last commit
+```
+git commit --amend
+```
+This will let you modify the last commit message or let's modify the file and commit without creating additional commits.
