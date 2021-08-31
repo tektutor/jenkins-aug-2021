@@ -53,3 +53,21 @@ git commit -m "Added Grapes."
 git commit --amend
 ```
 This will let you modify the last commit message or let's modify the file and commit without creating additional commits.
+
+
+### Listing all the branches in your local git repo
+```
+git branch
+```
+Shows all the branches in the repo.  The * represents the active branch.
+
+### Creating a new branch from master branch
+```
+git checkout -b dev-1.0
+```
+This will create a new branch by name dev-1.0 and switch to it.
+
+### Switching between branches
+```
+git checkout master
+```
