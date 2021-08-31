@@ -17,4 +17,12 @@
 			<version>4.12</version>
 		</dependency>
 	</dependencies>
+
+	<distributionManagement>
+    		<repository>
+        		<id>artifactory</id>
+        		<name>artifactory-releases</name>
+        		<url>http://localhost:8081/artifactory/tektutor</url>
+    		</repository>
+	</distributionManagement>
 </project>
