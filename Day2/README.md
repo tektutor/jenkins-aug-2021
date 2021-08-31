@@ -43,7 +43,7 @@ git commit -m "Initial commit."
 
 ### Modifying the files in the Git repo
 ```
-echo "\nGrapes" >> fruits.txt
+echo "Grapes" >> fruits.txt
 git add --all
 git commit -m "Added Grapes."
 ```
