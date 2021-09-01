@@ -23,6 +23,11 @@ cp /home/rps/.ssh/id_rsa.pub authorized_keys
 docker build -t tektutor/ansible-ubuntu-node .
 ```
 
+### Let's remove the existing containers
+```
+docker rm -f $(docker ps -aq)
+```
+
 #### Verify if the newly built image is listed
 ```
 docker images
