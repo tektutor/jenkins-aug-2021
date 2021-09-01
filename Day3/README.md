@@ -204,3 +204,9 @@ git pull
 cd Day3/Ansible
 ansible-playbook -i hosts install-nginx-playbook.yml
 ```
+
+#### Accessing the custom web pages after executing the above playbook
+```
+curl http://localhost:8001
+curl http://localhost:8002
+```
