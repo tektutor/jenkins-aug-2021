@@ -156,3 +156,12 @@ ubuntu2 | SUCCESS => {
 9. Ansible execute the ping.py python script on the Ansible node using /usr/bin/python
 10. Ansible records the output of the ping.py script and cleans up the tmp folder on the Ansible nodes 
 11. Ansible gives a summary of output on the Ansible Controller Machine(ACM).
+
+
+### Ansible Playbook Structure
+1. Ansible playbook is a YAML file with extension yaml or yml
+2. Each Ansible playbook may have one or more Play
+3. Each Play will have a hosts section that targets one or more servers(ansible nodes)
+4. Each Play may have an optional list of tasks under tasks section
+5. Each Play may have an optional list of roles under roles section
+6. Each Task under a Play can invoke at the most one Ansible Module(Python script in case of Unix/Linux or Powershell scripts in case of Windows Ansible Nodes)
