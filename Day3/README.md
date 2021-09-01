@@ -165,3 +165,12 @@ ubuntu2 | SUCCESS => {
 4. Each Play may have an optional list of tasks under tasks section
 5. Each Play may have an optional list of roles under roles section
 6. Each Task under a Play can invoke at the most one Ansible Module(Python script in case of Unix/Linux or Powershell scripts in case of Windows Ansible Nodes)
+
+
+### Running the ping-playbook
+```
+cd ~/Training/jenkins-aug-2021
+git pull
+cd Day3/Ansible
+ansible-playbook -i hosts ping-playbook.yml
+```
