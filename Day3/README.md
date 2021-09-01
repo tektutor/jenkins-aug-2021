@@ -1,3 +1,10 @@
+### For cloning this repository
+```
+mkdir Training
+cd Training
+git clone https://github.com/tektutor/jenkins-aug-2021.git
+```
+
 ### Building a custom Ubuntu Ansible Node Docker Image
 
 #### Let's create key pair for rps user
