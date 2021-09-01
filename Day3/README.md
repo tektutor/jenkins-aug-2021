@@ -1,3 +1,14 @@
+### Install Ansible
+```
+sudo yum install -y epel-release
+sudo yum install -y ansible
+```
+
+#### Test ansible version
+```
+ansible --version
+```
+
 ### For cloning this repository
 ```
 cd /home/rps
