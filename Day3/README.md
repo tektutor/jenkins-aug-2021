@@ -118,3 +118,29 @@ logout
 </pre>
 
 
+### Ping the ansible nodes ubuntu1 and ubuntu2 using Ansible ad-hoc command
+```
+cd ~/Training/jenkins-aug-2021
+git pull
+cd Day3/Ansible
+ansible -i hosts all -m ping
+```
+The expected output is
+<pre>
+[jegan@localhost Ansible]$ ansible -i hosts all -m ping
+ubuntu1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+ubuntu2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+</pre>
+
