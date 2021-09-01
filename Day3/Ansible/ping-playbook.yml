@@ -7,7 +7,7 @@
 - name: Second play 
   hosts: ubuntu2 
   tasks:
-    - name: Ping the ubuntu2 ansible node
+    - name: Retrieve the IP Address of ubuntu2 ansible node
       shell: hostname -i
       register: ipaddress
 
