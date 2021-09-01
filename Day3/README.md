@@ -144,3 +144,15 @@ ubuntu2 | SUCCESS => {
 }
 </pre>
 
+### What happens when we do ansible ping
+1. Ansible picks the connection details of ansible nodes from the inventory file
+2. Using the connections details. ansible does a SSH connection to all the machines in the inventory
+3. Ansible creates tmp directory on all Ansible Nodes
+4. Ansible also creates a tmp directory on the Ansible Controller Machine
+5. Ansible copies the ping.py from the ansible module directory and put in the Ansible Controller Machine tmp folder
+6. Ansible then copies all the ansible specific imports in the ping.py and pastes the code inline the ping.py on the ACM
+7. Using sftp/scp Ansible copies the transpiled ping.py from ACM and put them on the Ansible node tmp folder
+8. Ansible gives execute permission to the ping.py file on the Ansible nodes
+9. Ansible execute the ping.py python script on the Ansible node using /usr/bin/python
+10. Ansible records the output of the ping.py script and cleans up the tmp folder on the Ansible nodes 
+11. Ansible gives a summary of output on the Ansible Controller Machine(ACM).
