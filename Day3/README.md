@@ -174,3 +174,18 @@ git pull
 cd Day3/Ansible
 ansible-playbook -i hosts ping-playbook.yml
 ```
+
+### Stopping the nginx server in ubuntu1 and ubuntu2
+```
+cd ~/Training/jenkins-aug-2021
+git pull
+cd Day3/Ansible
+ansible -i hosts all -m shell -a "nginx -s stop"
+```
+
+### Running the install-nginx-playbook
+```
+cd ~/Training/jenkins-aug-2021
+cd Day3/Ansible
+ansible-playbook -i hosts install-nginx-playbook.yml
+```
