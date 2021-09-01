@@ -18,3 +18,14 @@
       when: response.failed == true
       shell: nginx 
 
+    - name: Create the custom document root folder
+      file: path=/var/html state=directory mode=0755
+
+    - name: Deploy custom web page 
+      copy: src=index.html dest=/var/html/index.html
+
+    - name: Configure nginx to pick html pages from our custom document root folder
+      copy: src=default dest=/etc/nginx/sites-available/default  
+
+    - name: Restart nginx web server to apply the config changes
+      shell: nginx -s reload 
