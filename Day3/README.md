@@ -27,7 +27,7 @@ docker build -t tektutor/ansible-ubuntu-node .
 ```
 docker images
 ```
-The output should show tektutor/ansible-ubuntu-node docker image
+The output should show tektutor/ansible-ubuntu-node docker image <b>highlighted</b> below
 <pre>
 [jegan@localhost jenkins-aug-2021]$ docker images
 REPOSITORY                                           TAG       IMAGE ID       CREATED          SIZE
