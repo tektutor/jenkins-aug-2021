@@ -1,5 +1,6 @@
 ### For cloning this repository
 ```
+cd /home/rps
 mkdir Training
 cd Training
 git clone https://github.com/tektutor/jenkins-aug-2021.git
