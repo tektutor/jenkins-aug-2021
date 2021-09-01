@@ -16,7 +16,7 @@ You may accept all defaults by hitting enter thrice :)
 
 #### Building ansible ubuntu image
 ```
-cd ~/jenkins-aug-2021
+cd ~/Training/jenkins-aug-2021
 git pull
 cd Day3/ubuntu-ansible
 cp /home/rps/.ssh/id_rsa.pub authorized_keys
