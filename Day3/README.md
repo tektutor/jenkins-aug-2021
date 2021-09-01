@@ -118,3 +118,50 @@ logout
 </pre>
 
 
+### Ping the ansible nodes ubuntu1 and ubuntu2 using Ansible ad-hoc command
+```
+cd ~/Training/jenkins-aug-2021
+git pull
+cd Day3/Ansible
+ansible -i hosts all -m ping
+```
+The expected output is
+<pre>
+[jegan@localhost Ansible]$ ansible -i hosts all -m ping
+ubuntu1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+ubuntu2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+</pre>
+
+### What happens when we do ansible ping
+1. Ansible picks the connection details of ansible nodes from the inventory file
+2. Using the connections details ansible does a SSH connection to all the machines in the inventory
+3. Ansible creates tmp directory on all Ansible Nodes
+4. Ansible also creates a tmp directory on the Ansible Controller Machine
+5. Ansible copies the ping.py from the ansible module directory and puts them in the Ansible Controller Machine's tmp folder
+6. Ansible then copies all the ansible specific imports in the ping.py and pastes the code inline in the ping.py on the ACM
+7. Using sftp/scp Ansible copies the transpiled ping.py from ACM and puts them on the Ansible node tmp folder
+8. Ansible gives execute permission to the ping.py file on the Ansible nodes
+9. Ansible execute the ping.py python script on the Ansible node using /usr/bin/python
+10. Ansible records the output of the ping.py script and cleans up the tmp folder on the Ansible nodes 
+11. Ansible gives a summary of output on the Ansible Controller Machine(ACM).
+
+
+### Ansible Playbook Structure
+1. Ansible playbook is a YAML file with extension yaml or yml
+2. Each Ansible playbook may have one or more Play
+3. Each Play will have a hosts section that targets one or more servers(ansible nodes)
+4. Each Play may have an optional list of tasks under tasks section
+5. Each Play may have an optional list of roles under roles section
+6. Each Task under a Play can invoke at the most one Ansible Module(Python script in case of Unix/Linux or Powershell scripts in case of Windows Ansible Nodes)
