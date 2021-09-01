@@ -37,3 +37,11 @@
 
     - name: Restart nginx web server to apply the config changes
       shell: nginx -s reload 
+
+    - name: Test web pages
+      shell: "curl http://localhost:{{item}}"
+      delegate_to: 127.0.0.1
+      register: output
+      with_sequence: start=8001 end=8002
+
+    - debug: var=output
