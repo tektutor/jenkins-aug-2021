@@ -1,0 +1,48 @@
+2021-09-01 23:19:43,516 p=20133 u=jegan n=ansible | ubuntu2 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname ubuntu2: Name or service not known",
+    "unreachable": true
+}
+2021-09-01 23:19:43,517 p=20133 u=jegan n=ansible | centos1 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname centos1: Name or service not known",
+    "unreachable": true
+}
+2021-09-01 23:19:43,519 p=20133 u=jegan n=ansible | ubuntu1 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname ubuntu1: Name or service not known",
+    "unreachable": true
+}
+2021-09-01 23:19:43,520 p=20133 u=jegan n=ansible | centos2 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname centos2: Name or service not known",
+    "unreachable": true
+}
+2021-09-01 23:22:48,049 p=20349 u=jegan n=ansible | ubuntu1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 23:22:48,063 p=20349 u=jegan n=ansible | ubuntu2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 23:22:48,168 p=20349 u=jegan n=ansible | centos1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 23:22:48,254 p=20349 u=jegan n=ansible | centos2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}

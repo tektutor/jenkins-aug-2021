@@ -1,0 +1,175 @@
+2021-09-01 22:34:23,051 p=16792 u=jegan n=ansible | ubuntu2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 22:34:23,086 p=16792 u=jegan n=ansible | ubuntu1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 22:34:23,169 p=16792 u=jegan n=ansible | centos1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 22:34:23,215 p=16792 u=jegan n=ansible | centos2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 22:45:28,512 p=17523 u=jegan n=ansible | ubuntu2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 22:45:30,532 p=17523 u=jegan n=ansible | ubuntu1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 22:45:32,401 p=17523 u=jegan n=ansible | centos1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 22:45:34,065 p=17523 u=jegan n=ansible | centos2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 22:47:13,596 p=17939 u=jegan n=ansible | ubuntu2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 22:47:13,617 p=17939 u=jegan n=ansible | ubuntu1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 22:47:13,719 p=17939 u=jegan n=ansible | centos2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 22:47:13,722 p=17939 u=jegan n=ansible | centos1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 23:15:21,669 p=18892 u=jegan n=ansible | [WARNING]:  * Failed to parse /home/jegan/jenkins-aug-2021/Day4/Ansible/hosts with yaml plugin: We were unable to read
+either as JSON nor YAML, these are the errors we got from each: JSON: Expecting value: line 1 column 2 (char 1)  Syntax
+Error while loading YAML.   did not find expected <document start>  The error appears to be in '/home/jegan/jenkins-
+aug-2021/Day4/Ansible/hosts': line 2, column 1, but may be elsewhere in the file depending on the exact syntax problem.
+The offending line appears to be:  [all] ubuntu1 ansible_port=2001 ^ here
+
+2021-09-01 23:15:21,670 p=18892 u=jegan n=ansible | [WARNING]:  * Failed to parse /home/jegan/jenkins-aug-2021/Day4/Ansible/hosts with ini plugin: /home/jegan/jenkins-
+aug-2021/Day4/Ansible/hosts:15: Section [vars:all] has unknown type: all
+
+2021-09-01 23:15:21,670 p=18892 u=jegan n=ansible | [WARNING]: Unable to parse /home/jegan/jenkins-aug-2021/Day4/Ansible/hosts as an inventory source
+
+2021-09-01 23:15:21,671 p=18892 u=jegan n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2021-09-01 23:15:26,833 p=18892 u=jegan n=ansible |  [ERROR]: User interrupted execution
+
+2021-09-01 23:16:05,855 p=18997 u=jegan n=ansible | ubuntu2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 23:16:05,871 p=18997 u=jegan n=ansible | ubuntu1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 23:16:05,965 p=18997 u=jegan n=ansible | centos1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 23:16:05,990 p=18997 u=jegan n=ansible | centos2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 23:16:57,364 p=19396 u=jegan n=ansible | centos2 | FAILED! => {
+    "msg": "The module ing was not found in configured module paths"
+}
+2021-09-01 23:16:57,370 p=19396 u=jegan n=ansible | centos1 | FAILED! => {
+    "msg": "The module ing was not found in configured module paths"
+}
+2021-09-01 23:17:06,021 p=19496 u=jegan n=ansible | centos2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 23:17:06,026 p=19496 u=jegan n=ansible | centos1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 23:17:13,085 p=19700 u=jegan n=ansible | ubuntu1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 23:17:13,142 p=19700 u=jegan n=ansible | ubuntu2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 23:17:21,889 p=19816 u=jegan n=ansible | ubuntu1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-09-01 23:17:28,349 p=19866 u=jegan n=ansible | centos1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
