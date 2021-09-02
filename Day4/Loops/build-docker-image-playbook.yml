@@ -1,0 +1,47 @@
+- name: Playbook builds custom docker images
+  hosts: localhost
+  become: yes
+  vars:
+     my_docker_images:
+       - tektutor/ubuntu-ansible-node:latest
+       - tektutor/centos-ansible-node:latest
+  tasks:
+    - name: Clean up existing containers
+      shell: docker rm -f $(docker ps -aq --filter="name=ubuntu*|centos*")
+      ignore_errors: yes
+
+    - name: Install EPEL release
+      yum: name=epel-release state=latest
+
+    - name: Install PIP 
+      yum: name=python3-pip state=latest
+
+    - name: Install Docker Python SDK
+      shell: pip3 install docker-py 
+
+    - name: Remove the existing images
+      docker_image:
+          name: "{{item}}" 
+          state: absent
+      with_list: "{{my_docker_images}}"
+
+    - name: Build ansible ubuntu node image
+      docker_image:
+         name: tektutor/ubuntu-ansible-node:latest
+         build:
+            dockerfile: UbuntuDockerfile
+            path: .
+            pull: no
+         state: present
+         source: build
+
+    - name: Build ansible centos node image
+      docker_image:
+         name: tektutor/centos-ansible-node:latest
+         build:
+            dockerfile: CentOSDockerfile
+            path: .
+            pull: no
+         state: present
+         source: build
+
