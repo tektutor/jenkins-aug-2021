@@ -28,6 +28,11 @@ jfrog-docker-reg2.bintray.io/jfrog/artifactory-oss   4.1.0     c5f6c78afc2b   5 
 docker run -d --name centos1 --hostname centos1 -p 2003:22 -p 8003:80 tektutor/centos-ansible-node
 docker run -d --name centos2 --hostname centos2 -p 2004:22 -p 8004:80 tektutor/centos-ansible-node
 ```
+
+### Check if the centos1 and centos2 containers are up and running
+```
+docker ps
+```
 The expected output is
 <pre>
 [jegan@localhost jenkins-aug-2021]$ docker ps
@@ -38,11 +43,6 @@ c520941d56fd   tektutor/centos-ansible-node:latest   "/usr/sbin/sshd -D"   8 min
 a8a4985cf4ab   tektutor/ubuntu-ansible-node          "/usr/sbin/sshd -D"   22 hours ago    Up 8 minutes   0.0.0.0:2002->22/tcp, :::2002->22/tcp, 0.0.0.0:8002->80/tcp, :::8002->80/tcp   ubuntu2
 d65dfee152f4   tektutor/ubuntu-ansible-node          "/usr/sbin/sshd -D"   22 hours ago    Up 8 minutes   0.0.0.0:2001->22/tcp, :::2001->22/tcp, 0.0.0.0:8001->80/tcp, :::8001->80/tcp   ubuntu1
 </pre>
-
-### Check if the centos1 and centos2 containers are up and running
-```
-docker ps
-```
 
 ### See if you can SSH into the centos1 and centos2 containers
 ```
