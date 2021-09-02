@@ -125,3 +125,11 @@ git pull
 cd Day4/Ansible/after-refactoring
 ansible-playbook install-nginx-playbook.yml
 ```
+
+### Executing provision docker container playbook
+```
+cd ~/Training/jenkins-aug-2021
+git pull
+cd Day4/Loops
+ansible-playbook provision-containers-playbook.yml
+```
