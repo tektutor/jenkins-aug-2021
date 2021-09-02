@@ -1,0 +1,29 @@
+- name: This playbook demonstrates provisioning containers from playbook
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Cleanup all containers
+      shell: docker rm -f $(docker ps -aq --filter="name=ubuntu*|centos*")
+      ignore_errors: yes
+
+    - name: Install EPEL release
+      yum: name=epel-release state=latest
+
+    - name: Install PIP 
+      yum: name=python3-pip state=latest
+
+    - name: Install Docker Python SDK
+      shell: pip3 install docker-py 
+
+    - name: Provision ubuntu containers
+      docker_container:
+            name: "ubuntu-{{item}}"
+            hostname: "ubuntu-{{item}}"
+            image: "tektutor/ubuntu-ansible-node:latest"
+            pull: no
+            ports:
+               - "2{{item}}:22"
+               - "8{{item}}:80"
+            state: started
+      with_sequence: start=1 end=100 format="%03d"
