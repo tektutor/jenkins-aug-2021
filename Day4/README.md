@@ -110,4 +110,10 @@ cd Day4/Ansible/AnsibleRecommendedDirStructure
 ansible all -m ping
 ```
 
-
+### Try install nginx playbook on ubuntu and centos ansible nodes
+```
+cd ~/Training/jenkins-aug-2021
+git pull
+cd Day4/Ansible
+ansible-playbook install-nginx-playbook.yml
+```
