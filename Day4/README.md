@@ -6,6 +6,7 @@ cd Day4/centos-ansible
 cp /home/rps/.ssh/id_rsa.pub authorized_keys
 docker build -t tektutor/centos-ansible-node .
 ```
+The above steps assume you already have created ssh key pairs, if not you need to create key pairs for rps user before trying the above commands.
 
 ### List and see if the new docker image shows up
 ```
