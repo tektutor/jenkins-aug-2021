@@ -134,4 +134,4 @@ cd Day4/Loops
 ansible-playbook provision-containers-playbook.yml -K
 ```
 
-In the above command, -K will ask for become password i.e root password of rps user.  This is required as we running the playbook on localhost as non-admin user, but we are trying to install softwares.
+In the above command, -K will ask for become password i.e root password of rps user.  As we are running the playbook as non-admin user, we need to elevate the rps user to sudo, hence this sudo password must be typed.
