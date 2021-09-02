@@ -1,0 +1,13 @@
+- name: Retrieve IP address 
+  shell: hostname -i
+  register: ipaddress
+
+- name: Create the custom document root folder
+  file: path=/var/html state=directory mode=0755
+
+- name: Deploy custom web page 
+  template: src=index.html dest=/var/html/index.html
+
+- name: Restart nginx web server to apply the config changes
+  shell: nginx -s reload 
+

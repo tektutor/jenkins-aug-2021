@@ -1,0 +1,8 @@
+- name: Check if web page is accessible in ansible node
+  shell: curl http://localhost:80
+  register: response
+  ignore_errors: yes
+
+- name: Start the nginx web server in Ansible node
+  when: response.failed == true
+  shell: nginx 

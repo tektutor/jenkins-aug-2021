@@ -1,0 +1,21 @@
+- name: This playbook will install nginx, configures web root folder, deploys custom web page
+  hosts: all
+  vars_files:
+    - nginx-conf.yml
+  tasks:
+    - include: "install-nginx-{{ansible_distribution|lower}}.yml"
+    - include: "install-curl-{{ansible_distribution|lower}}.yml"
+
+    - include: start-nginx-server.yml
+
+    - include: "configure-nginx-{{ansible_distribution|lower}}.yml"
+
+    - include: common-nginx-tasks.yml
+
+- name: This play will test the nginx installation by accessing their respective pages
+  hosts: localhost
+  tasks:
+   - name: Test web pages
+     shell: "curl http://localhost:{{item}}"
+     register: output
+     with_sequence: start=8001 end=8004

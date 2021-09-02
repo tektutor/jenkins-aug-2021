@@ -1,0 +1,7 @@
+---
+# tasks file for nginx
+- include: "install-nginx-{{ansible_distribution|lower}}.yml"
+- include: "install-curl-{{ansible_distribution|lower}}.yml"
+- include: start-nginx-server.yml
+- include: "configure-nginx-{{ansible_distribution|lower}}.yml"
+- include: common-nginx-tasks.yml

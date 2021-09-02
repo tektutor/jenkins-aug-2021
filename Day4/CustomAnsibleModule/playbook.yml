@@ -1,0 +1,8 @@
+- name: Demonstrates using our custom hello module
+  hosts: all 
+  tasks:
+     - name: Invoke hello module
+       hello: msg="Something"
+       register: output
+
+     - debug: var=output
