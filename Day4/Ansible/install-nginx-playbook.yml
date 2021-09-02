@@ -1,0 +1,66 @@
+- name: This playbook will install nginx, configures web root folder, deploys custom web page
+  hosts: all
+  vars:
+    - greeting_msg: Welcome to DevOps !
+    - provisioner_tool: Docker
+    - conf_mgr_tool: Ansible
+  tasks:
+    - name: Install nginx in Ubuntu node
+      when: ( ansible_distribution == "Ubuntu" and ansible_os_family == "Debian" )
+      apt: name=nginx state=latest update_cache=yes
+
+    - name: Install Extra Packages for Enterprise Linux(EPEL) in CentOS node
+      when: ( ansible_distribution == "CentOS" and ansible_os_family == "RedHat" )
+      yum: name=epel-release state=latest 
+
+    - name: Install nginx in CentOS node
+      when: ( ansible_distribution == "CentOS" and ansible_os_family == "RedHat" )
+      yum: name=nginx state=latest 
+
+    - name: Install curl utility in Ubuntu node
+      when: ( ansible_distribution == "Ubuntu" and ansible_os_family == "Debian" )
+      apt: name=curl state=latest
+
+    - name: Install curl utility in CentOS node
+      when: ( ansible_distribution == "CentOS" and ansible_os_family == "RedHat" )
+      yum: name=curl state=latest
+
+    - name: Check if web page is accessible in ansible node
+      shell: curl http://localhost:80
+      register: response
+      ignore_errors: yes
+
+    - debug: var=response
+
+    - name: Start the nginx web server in Ansible node
+      when: response.failed == true
+      shell: nginx 
+
+    - name: Retrieve IP address 
+      shell: hostname -i
+      register: ipaddress
+
+    - name: Create the custom document root folder
+      file: path=/var/html state=directory mode=0755
+
+    - name: Deploy custom web page 
+      template: src=index.html dest=/var/html/index.html
+
+    - name: Configure nginx to pick html pages from our custom document root folder in Ubuntu node
+      when: ( ansible_distribution == "Ubuntu" and ansible_os_family == "Debian" )
+      copy: src=default dest=/etc/nginx/sites-available/default  
+
+    - name: Configure nginx to pick html pages from our custom document root folder in CentOS node
+      when: ( ansible_distribution == "CentOS" and ansible_os_family == "RedHat" )
+      copy: src=nginx.conf dest=/etc/nginx/nginx.conf  
+
+    - name: Restart nginx web server to apply the config changes
+      shell: nginx -s reload 
+
+    - name: Test web pages
+      shell: "curl http://localhost:{{item}}"
+      delegate_to: 127.0.0.1
+      register: output
+      with_sequence: start=8001 end=8004
+
+    - debug: var=output

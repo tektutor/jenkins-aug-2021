@@ -14,3 +14,9 @@ centos[1:2]
 ansible_user=root
 ansible_host=localhost
 ansible_private_key_file=~/.ssh/id_rsa
+
+[dev:vars]
+greeting_msg=You are using Dev environment
+
+[qa:vars]
+greeting_msg=You are using QA environment
