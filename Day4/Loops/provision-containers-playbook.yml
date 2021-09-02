@@ -26,4 +26,16 @@
                - "2{{item}}:22"
                - "8{{item}}:80"
             state: started
-      with_sequence: start=1 end=100 format="%03d"
+      with_sequence: start=1 end=2 format="%03d"
+
+    - name: Provision centos containers
+      docker_container:
+            name: "centos-{{item}}"
+            hostname: "centos-{{item}}"
+            image: "tektutor/centos-ansible-node:latest"
+            pull: no
+            ports:
+               - "3{{item}}:22"
+               - "9{{item}}:80"
+            state: started
+      with_sequence: start=1 end=2 format="%03d"
