@@ -78,3 +78,10 @@ Last login: Thu Sep  2 05:03:52 2021 from 172.17.0.1
 logout
 Connection to localhost closed.
 </pre>
+
+### In case you were not able to SSH into centos1, you may troubleshoot 
+```
+docker logs centos1
+docker exec -it centos1 bash
+```
+
