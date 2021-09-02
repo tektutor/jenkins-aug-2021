@@ -135,3 +135,11 @@ ansible-playbook provision-containers-playbook.yml -K
 ```
 
 In the above command, -K will ask for become password i.e root password of rps user.  As we are running the playbook as non-admin user, we need to elevate the rps user to sudo, hence this sudo password must be typed.
+
+### Executing docker image automation playbook
+```
+cd ~/Training/jenkins-aug-2021
+git pull
+cd Day4/Loops
+ansible-playbook build-docker-image-playbook.yml -K
+```
