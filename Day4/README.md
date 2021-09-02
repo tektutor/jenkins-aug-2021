@@ -141,5 +141,6 @@ In the above command, -K will ask for become password i.e root password of rps u
 cd ~/Training/jenkins-aug-2021
 git pull
 cd Day4/Loops
+cp ~/.ssh/id_rsa.pub authorized_keys
 ansible-playbook build-docker-image-playbook.yml -K
 ```
