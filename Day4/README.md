@@ -11,6 +11,17 @@ docker build -t tektutor/centos-ansible-node .
 ```
 docker images
 ```
+The expected output is
+<pre>
+REPOSITORY                                           TAG       IMAGE ID       CREATED         SIZE
+<b>tektutor/centos-ansible-node                         latest    fb40ae31dd0e   9 minutes ago   257MB</b>
+tektutor/ubuntu-ansible-node                         latest    009afa27da10   23 hours ago    220MB
+ubuntu                                               16.04     38b3fa4640d4   5 weeks ago     135MB
+hello-world                                          latest    d1165f221234   6 months ago    13.3kB
+centos                                               8         300e315adb2f   8 months ago    209MB
+xebialabs/xl-release                                 8.2       95a054bc36b1   2 years ago     450MB
+jfrog-docker-reg2.bintray.io/jfrog/artifactory-oss   4.1.0     c5f6c78afc2b   5 years ago     409MB
+</pre>
 
 ### Let's create centos1 and centos2 containers to use them as ansible nodes
 ```
