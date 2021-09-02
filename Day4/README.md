@@ -114,6 +114,14 @@ ansible all -m ping
 ```
 cd ~/Training/jenkins-aug-2021
 git pull
-cd Day4/Ansible
+cd Day4/Ansible/before-refactoring
+ansible-playbook install-nginx-playbook.yml
+```
+
+### Executing the refactored install nginx playbook
+```
+cd ~/Training/jenkins-aug-2021
+git pull
+cd Day4/Ansible/after-refactoring
 ansible-playbook install-nginx-playbook.yml
 ```
