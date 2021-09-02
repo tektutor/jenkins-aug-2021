@@ -44,9 +44,37 @@ a8a4985cf4ab   tektutor/ubuntu-ansible-node          "/usr/sbin/sshd -D"   22 ho
 d65dfee152f4   tektutor/ubuntu-ansible-node          "/usr/sbin/sshd -D"   22 hours ago    Up 8 minutes   0.0.0.0:2001->22/tcp, :::2001->22/tcp, 0.0.0.0:8001->80/tcp, :::8001->80/tcp   ubuntu1
 </pre>
 
-### See if you can SSH into the centos1 and centos2 containers
+### Try ssh into centos1
 ```
 ssh -p 2003 root@localhost
-exit
+```
+The expected output is
+<pre>
+[jegan@localhost jenkins-aug-2021]$ ssh -p 2003 root@localhost
+The authenticity of host '[localhost]:2003 ([::1]:2003)' can't be established.
+ECDSA key fingerprint is SHA256:/A4sdguLI6swqmiYWS7JKBZy9Fk4LYEpJ+JduvxIOh0.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[localhost]:2003' (ECDSA) to the list of known hosts.
+Last login: Thu Sep  2 05:13:43 2021 from 172.17.0.1
+[root@centos1 ~]# exit
+logout
+Connection to localhost closed.
+[jegan@localhost jenkins-aug-2021]$ 
+</pre>
+
+### Try ssh into centos2
+```
 ssh -p 2004 root@localhost
 ```
+The expected output is
+<pre>
+[jegan@localhost jenkins-aug-2021]$ ssh -p 2004 root@localhost
+The authenticity of host '[localhost]:2004 ([::1]:2004)' can't be established.
+ECDSA key fingerprint is SHA256:/A4sdguLI6swqmiYWS7JKBZy9Fk4LYEpJ+JduvxIOh0.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[localhost]:2004' (ECDSA) to the list of known hosts.
+Last login: Thu Sep  2 05:03:52 2021 from 172.17.0.1
+[root@centos2 ~]# exit
+logout
+Connection to localhost closed.
+</pre>
