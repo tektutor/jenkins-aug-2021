@@ -1,0 +1,10 @@
+- name: Demonstrates dictionary variabes in playbook
+  hosts: localhost
+  vars:
+     software_tools_path:
+          JAVA_HOME: /usr/lib/java11
+          M2_HOME: /usr/share/maven
+  tasks:
+     -  debug: msg="JAVA_HOME = {{software_tools_path["JAVA_HOME"]}}"
+     -  debug: msg="M2_HOME= {{software_tools_path["M2_HOME"]}}"
+

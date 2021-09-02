@@ -1,0 +1,7 @@
+- name: Demonstrates accessing vault protected sensitive data via playbook
+  hosts: localhost
+  vars_files:
+    - credentials.yml
+  tasks:
+    - debug: msg="Username - {{username}}"
+    - debug: msg="Password - {{password}}"
