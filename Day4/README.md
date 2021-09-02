@@ -86,3 +86,28 @@ docker logs centos1
 docker exec -it centos1 bash
 ```
 
+### Ansible configuration file
+- All ansible configurations are captures in a file called ansible.cfg.
+- ansible.cfg could be maintained in multiple locations
+    - ANSIBLE_CONFIG environment variable could be used to point to the ansible.cfg file kept at any locations that is accessible.
+    - Current directory
+    - Home directory of the user who runs the ansible ad-hoc/playbooks
+    - /etc/ansible/ansible.cfg 
+- Ansible looks for ansible.cfg file in the order listed above and whichever is found first it picks it
+- this file can be used to configure the hosts file ansible should be using, enable/disable logs, configures timeouts, configure how many parallel connections ansible should make to ansible nodes,etc
+
+### In case you have configured inventory path in ansible.cfg, you may run ad-hoc or playbooks as shown below
+```
+ansible all -m ping
+ansible-playbook your-playbook.yml
+```
+
+### Understanding Ansible recommended directory structure
+```
+cd ~/Training/jenkins-aug-2021
+git pull
+cd Day4/Ansible/AnsibleRecommendedDirStructure
+ansible all -m ping
+```
+
+
