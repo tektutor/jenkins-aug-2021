@@ -110,7 +110,7 @@ cd Day4/Ansible/AnsibleRecommendedDirStructure
 ansible all -m ping
 ```
 
-### Trying out install nginx on ubuntu and centos ansible nodes
+### Try out install nginx on ubuntu and centos ansible nodes
 ```
 cd ~/Training/jenkins-aug-2021
 git pull
