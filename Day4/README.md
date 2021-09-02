@@ -131,5 +131,7 @@ ansible-playbook install-nginx-playbook.yml
 cd ~/Training/jenkins-aug-2021
 git pull
 cd Day4/Loops
-ansible-playbook provision-containers-playbook.yml
+ansible-playbook provision-containers-playbook.yml -K
 ```
+
+In the above command, -K will ask for become password i.e root password.
